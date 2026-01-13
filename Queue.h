@@ -11,5 +11,34 @@ class Queue {
 
 	// Data members
 	Node* mHead; // This points to the oldest node in the list
+
+public:
+
+	// Constructor
+	// Create an empty list
+	Queue() {
+		mHead = nullptr;
+	}
+
+	// Destructor
+	~Queue() {
+
+	}
+
+	// Add a Node to the end of the list
+	void PushBack(const Type& _data) {
+		// Dynamically allocate a Node
+		Node* endOfList = new Node;
+		// Set the data members
+		endOfList->data = _data;
+		endOfList->next = nullptr;
+
+		// Link into the existing list
+
+		// Is the list empty? If so, start the queue
+		if (mHead == nullptr) {
+			mHead = endOfList;
+		}
+	}
 };
 

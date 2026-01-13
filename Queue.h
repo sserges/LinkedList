@@ -36,8 +36,17 @@ public:
 		// Link into the existing list
 
 		// Is the list empty? If so, start the queue
-		if (mHead == nullptr) {
+		if (!mHead) {
 			mHead = endOfList;
+		} else {
+			// Create a temporary Node to walk through the list
+			Node* walk = mHead;
+
+			// Move the walk pointer over until it gets to the last node
+			while (walk->next != nullptr)
+				walk = walk->next;
+
+			walk->next = endOfList;
 		}
 	}
 };

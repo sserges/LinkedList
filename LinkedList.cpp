@@ -13,6 +13,8 @@ int main()
     Queue<int> queue;
 
     queue.PushBack(34);
+    queue.PushBack(4);
+    queue.PushBack(8);
 
     std::cout << "\n\n";
     system("pause");

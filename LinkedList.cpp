@@ -1,0 +1,16 @@
+// LinkedList.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//
+
+#include <iostream>
+
+int main()
+{
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    _CrtSetBreakAlloc(-1);
+
+
+
+    std::cout << "\n\n";
+    system("pause");
+    return 0;
+}

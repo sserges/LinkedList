@@ -69,7 +69,7 @@ int main()
    
 
     std::cout << "\tSorting Vector\n";
-    std::sort(personVec.begin(), personVec.end(), std::greater<Person>());
+    std::sort(personVec.begin(), personVec.end());
     std::cout << Person::GetNumCopies() << " copies\n";
 
     Person::ResetNumCopies();
@@ -80,6 +80,19 @@ int main()
 
     //for (std::vector<Person>::iterator iter = personVec.begin(); iter != personVec.end(); iter++)
     //  iter->Display();
+
+    std::cout << '\n';
+
+    //personVec[0].Display();
+    //personVec[personVec.size() - 1].Display();
+
+    personVec.front().Display();
+    personVec.back().Display();
+
+    std::cout << '\n';
+
+    personList.front().Display();
+    personList.back().Display();
 
 #endif
     std::cout << "\n\n";

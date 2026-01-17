@@ -15,5 +15,9 @@ public:
 
 	// Print to the console
 	void Display() const;
+
+	// Overloaded relational operators for sorting
+	bool operator<(const Person& _rhs) const;
+	bool operator>(const Person& _rhs) const;
 };
 

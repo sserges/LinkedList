@@ -4,6 +4,7 @@
 #include <iostream>
 #include <list>
 #include <vector>
+#include <algorithm>
 
 #include "Queue.h"
 #include "String.h"
@@ -46,11 +47,31 @@ int main()
         people[i].Set(RandomName().c_str(), rand() % 100 + 1);
     }
 
+    // Containers
+    std::vector<Person> personVec;
+    std::list<Person> personList;
+
+    std::cout << "\tAdding to Vector\n";
     for (int i = 0; i < numPeople; i++)
-        people[i].Display();
+        personVec.push_back(people[i]);
+
+    std::cout << "\n";
+
+    std::cout << "\tAdding to List\n";
+    for (int i = 0; i < numPeople; i++)
+        personList.push_back(people[i]);
         
 
     delete[] people;
+
+    std::cout << "\tSorting Vector\n";
+    std::sort(personVec.begin(), personVec.end(), std::greater<Person>());
+
+    std::cout << "Sorting List\n";
+    personList.sort();
+
+    for (std::vector<Person>::iterator iter = personVec.begin(); iter != personVec.end(); iter++)
+        iter->Display();
 
 #endif
     std::cout << "\n\n";

@@ -50,10 +50,28 @@ int main()
 std::string RandomName() {
     std::string name;
     int len = rand() % 6 + 3; // 3 - 8 value
+    bool startsWithVowel = rand() % 2;
+
+    std::string consonants = "bcdfghjklmnpqrstvwyz";
+    std::string vowels = "aeiou";
 
     // Fill in the name
-    for (int i = 0; i < len; i++)
-        name += 'a' + rand() % 26; // Add a random letter to the string
+    for (int i = 0; i < len; i++) {
+        // Vowels as first letter
+        if (startsWithVowel) {
+            if (i % 2 == 0)
+                name += vowels[rand() % vowels.size()];
+            else
+                name += consonants[rand() % consonants.size()];
+        }
+        // Consonant as first letter
+        else {
+            if (i % 2 == 0)
+                name += consonants[rand() % consonants.size()];
+            else
+                name += vowels[rand() % vowels.size()];
+        }
+    }
 
     // Uppercase the first letter
     name[0] = toupper(name[0]);

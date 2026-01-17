@@ -5,6 +5,7 @@
 
 #include "Queue.h"
 #include "String.h"
+#include "Person.h"
 
 int main()
 {
@@ -20,13 +21,18 @@ int main()
 
 #endif
 
-#if 1
+#if 0
 
     String hello("Hello world");
 
     for (String::Iterator iter = hello.Begin(); iter != hello.End(); iter++)
         std::cout << *iter;
 
+#endif
+
+#if 1
+    Person p("Bill", 42);
+    p.Display();
 #endif
     std::cout << "\n\n";
     system("pause");

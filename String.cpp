@@ -48,6 +48,11 @@ String& String::operator=(const String& _str) {
 	return *this;
 }
 
+// Return the underlying char*
+const char* String::CStr() const {
+	return mString;
+}
+
 void String::Display() const {
 	if (mString)
 		std::cout << mString << std::endl;
@@ -96,4 +101,11 @@ String::Iterator String::End() {
 
 bool String::Iterator::operator!=(const Iterator& _iter) const {
 	return this->mCurr != _iter.mCurr;
+}
+
+// Overloaded operator to allow for printing with cout
+std::ostream& operator<<(std::ostream& _os, const String& _s) {
+	_os << _s.mString;
+
+	return _os;
 }

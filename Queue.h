@@ -60,5 +60,9 @@ public:
 			mTail = endOfList;
 		}
 	}
+
+	bool isEmpty() {
+		return mHead == nullptr;
+	}
 };
 

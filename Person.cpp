@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 #include "Person.h"
 
@@ -12,5 +13,5 @@ void Person::Set(const String& _name, unsigned int _age) {
 }
 
 void Person::Display() const {
-	std::cout << mName << '\t' << mAge << '\n';
+	std::cout << std::setw(8) << std::left << mName << '\t' << mAge << '\n';
 }

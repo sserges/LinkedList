@@ -2,6 +2,8 @@
 //
 
 #include <iostream>
+#include <list>
+#include <vector>
 
 #include "Queue.h"
 #include "String.h"
@@ -37,8 +39,18 @@ int main()
 
 #if 1
    
-    for (int i = 0; i < 20; i++)
-        std::cout << RandomName() << '\n';
+    const int numPeople = 5000;
+    Person* people = new Person[numPeople];
+
+    for (int i = 0; i < numPeople; i++) {
+        people[i].Set(RandomName().c_str(), rand() % 100 + 1);
+    }
+
+    for (int i = 0; i < numPeople; i++)
+        people[i].Display();
+        
+
+    delete[] people;
 
 #endif
     std::cout << "\n\n";

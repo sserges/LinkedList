@@ -61,17 +61,25 @@ int main()
     for (int i = 0; i < numPeople; i++)
         personList.push_back(people[i]);
         
-
+    // No longer need the array
     delete[] people;
+
+    // Calling a static method
+    // Person::ResetNumCopies();
+   
 
     std::cout << "\tSorting Vector\n";
     std::sort(personVec.begin(), personVec.end(), std::greater<Person>());
+    std::cout << Person::GetNumCopies() << " copies\n";
+
+    Person::ResetNumCopies();
 
     std::cout << "Sorting List\n";
     personList.sort();
+    std::cout << Person::GetNumCopies() << " copies\n";
 
-    for (std::vector<Person>::iterator iter = personVec.begin(); iter != personVec.end(); iter++)
-        iter->Display();
+    //for (std::vector<Person>::iterator iter = personVec.begin(); iter != personVec.end(); iter++)
+    //  iter->Display();
 
 #endif
     std::cout << "\n\n";

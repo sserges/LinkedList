@@ -5,10 +5,29 @@
 #include <list>
 #include <vector>
 #include <algorithm>
+#include <functional>
 
 #include "Queue.h"
 #include "String.h"
 #include "Person.h"
+
+void PrintString(const std::string& _str) {
+    std::cout << _str << '\n';
+}
+
+void PrintStringLength(const std::string& _str) {
+    std::cout << _str.size() << '\n';
+}
+
+//void ProcessStrings(const std::vector<std::string>& _vec, void(*_ptr)(const std::string)) {
+//    for (size_t i = 0; i < _vec.size(); i++)
+//        _ptr(_vec[i]);
+// }
+
+void ProcessStrings(const std::vector<std::string>& _vec, std::function<void (const std::string&)> _ptr) {
+    for (size_t i = 0; i < _vec.size(); i++)
+        _ptr(_vec[i]);
+}
 
 // Generate a random name
 std::string RandomName();
@@ -39,6 +58,18 @@ int main()
 #endif
 
 #if 1
+
+    // void PrintString(const std::string & _str)
+    void(*printPtr)(const std::string&);
+
+    printPtr = PrintString;
+
+    std::cout << PrintString << '\n';
+    std::cout << printPtr << '\n';
+
+#endif
+
+#if 0
    
     const int numPeople = 5000;
     Person* people = new Person[numPeople];

@@ -60,12 +60,21 @@ int main()
 #if 1
 
     // void PrintString(const std::string & _str)
-    void(*printPtr)(const std::string&);
+    //void(*printPtr)(const std::string&);
 
-    printPtr = PrintString;
+    // printPtr = PrintString;
 
-    std::cout << PrintString << '\n';
-    std::cout << printPtr << '\n';
+    // std::cout << PrintString << '\n';
+    // std::cout << printPtr << '\n';
+
+    std::vector<std::string> vec{ "one", "two", "three" };
+
+    using iterator = std::vector<std::string>::iterator;
+    typedef std::vector<std::string>::iterator typeIter;
+
+    for (typeIter iter = vec.begin(); iter != vec.end(); iter++) {
+        std::cout << *iter << '\n';
+    }
 
 #endif
 
